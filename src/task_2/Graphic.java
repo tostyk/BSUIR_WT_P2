@@ -9,8 +9,7 @@ public class Graphic {
     private double leftBottom = -6;
     private boolean isPointIn = false;
     public boolean CheckPoint(double x, double y) {
-        if (y > 0)
-        {
+        if (y > 0) {
             isPointIn = (y <= top && x <= rightTop && x>=leftTop);
         } else {
             isPointIn = (y >= bottom && x <= rightBottom && x>=leftBottom);
