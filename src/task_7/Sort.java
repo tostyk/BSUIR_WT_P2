@@ -1,7 +1,7 @@
 package task_7;
 
 public class Sort {
-    public double[] Shell(double[] arr) {
+    public double[] shell(double[] arr) {
         double[] sortedArr = arr.clone();
         for (int step = sortedArr.length / 2; step > 0; step /= 2) {
             for (int i = step; i < sortedArr.length; i++) {

@@ -1,11 +1,10 @@
 package task_4;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Prime {
     private ArrayList<Integer> arrayOfIndexes = new ArrayList<>();
-    public ArrayList<Integer> GetIndexes(int[] array) {
+    public ArrayList<Integer> getIndexes(int[] array) {
         if (array != null) {
             for (int i = 0; i < array.length; i++) {
                 if (IsPrime(array[i])) {
@@ -15,7 +14,7 @@ public class Prime {
         }
         return arrayOfIndexes;
     }
-    public void PrintIndexes(ArrayList<Integer> list) {
+    public void printIndexes(ArrayList<Integer> list) {
         if (list != null) {
             for (Integer arrayOfIndex : list) {
                 System.out.format("%d ", arrayOfIndex);

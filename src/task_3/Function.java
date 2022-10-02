@@ -6,7 +6,7 @@ public class Function {
     private double step;
     private int steps = 0;
     private double[][] table = {};
-    private void CreateTable() {
+    private void createTable() {
         steps = (int)((finish - start) / step);
         table = new double[2][steps];
         for (int i = 0; i < steps; i++) {
@@ -14,13 +14,13 @@ public class Function {
             table[1][i] = Math.tan(start + i*step);
         }
     }
-    public void SetArgs(double start, double finish, double step) {
+    public void setArgs(double start, double finish, double step) {
         this.start = start;
         this.finish = finish;
         this.step = step;
     }
-    public void PrintTable()  {
-        CreateTable();
+    public void printTable()  {
+        createTable();
         System.out.println("|---------|---------|");
         System.out.println("|    x    |   F(x)  |");
         System.out.println("|---------|---------|");
