@@ -26,6 +26,8 @@ public class Book implements Comparable<Book>{
     // task 12
     @Override
     public boolean equals(Object obj){
+        if( this == obj){ return true; }
+        if(null == obj){return false; }
         if(obj.getClass() == getClass()){
             Book book = (Book)obj;
             return  this.title.equals(book.title) &&
@@ -38,7 +40,7 @@ public class Book implements Comparable<Book>{
 
     @Override
     public int hashCode(){
-        int hashCode = 1;
+        int hashCode = 0;
         hashCode += ((title == null) ? 0: title.hashCode());
         hashCode += ((author == null) ? 0: author.hashCode());
         hashCode += ((isbn == null) ? 0: isbn.hashCode());
@@ -49,11 +51,11 @@ public class Book implements Comparable<Book>{
     @Override
     public String toString(){
         String str = "";
-        str = "title: " + title +
-                ", author: " + author +
-                ", price: " + price +
-                ", edition: " + edition +
-                ", isbn: " + isbn;
+        str = getClass().getName() + ": title = " + title +
+                ", author = " + author +
+                ", price = " + price +
+                ", edition = " + edition +
+                ", isbn = " + isbn;
         return str;
     }
 

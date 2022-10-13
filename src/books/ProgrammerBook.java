@@ -5,16 +5,15 @@ public class ProgrammerBook extends Book{
     private int level;
 
     public ProgrammerBook(String title, String author, int price, String isbn, String language, int level) {
-        setTitle(title);
-        setAuthor(author);
-        setPrice(price);
-        setIsbn(isbn);
+        super(title, author, price, isbn);
         this.language = language;
         this.level = level;
     }
     // task 13
     @Override
     public boolean equals(Object obj){
+        if(this == obj) { return true; }
+        if(obj == null) { return false; }
         if(obj.getClass() == getClass()){
             ProgrammerBook book = (ProgrammerBook)obj;
             return  this.getTitle().equals(book.getTitle()) &&
@@ -29,11 +28,8 @@ public class ProgrammerBook extends Book{
 
     @Override
     public int hashCode(){
-        int hashCode = 1;
-        hashCode += ((getTitle() == null) ? 0: getTitle().hashCode());
-        hashCode += ((getAuthor() == null) ? 0: getAuthor().hashCode());
-        hashCode += ((getIsbn() == null) ? 0: getIsbn().hashCode());
-        hashCode += getPrice();
+        int hashCode;
+        hashCode = super.hashCode();
         hashCode += level;
         hashCode += ((language == null) ? 0: language.hashCode());
         return hashCode;
@@ -42,13 +38,13 @@ public class ProgrammerBook extends Book{
     @Override
     public String toString(){
         String str = "";
-        str = "title: " + getTitle() +
-                ", author: " + getAuthor() +
-                ", price: " + getPrice() +
-                ", edition: " + getEdition() +
-                ", isbn: " + getIsbn() +
-                ", level: " + level +
-                ", language: " + language;
+        str = getClass().getName() + ": title = " + getTitle() +
+                ", author = " + getAuthor() +
+                ", price = " + getPrice() +
+                ", edition = " + getEdition() +
+                ", isbn = " + getIsbn() +
+                ", level = " + level +
+                ", language = " + language;
         return str;
     }
 
